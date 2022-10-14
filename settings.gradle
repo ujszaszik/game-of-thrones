@@ -1,0 +1,16 @@
+pluginManagement {
+    includeBuild("build-logic")
+}
+
+rootProject.name = "Game of Thrones"
+
+include ':app'
+
+include ':core:data'
+include ':core:extension'
+include ':core:navigation'
+include ':core:reducer'
+include ':core:ui'
+
+include ':feature:characters'
+include ':feature:splash'

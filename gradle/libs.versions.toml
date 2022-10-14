@@ -1,0 +1,99 @@
+[versions]
+
+# android
+app-compat = "1.5.1"
+core-ktx = "1.9.0"
+viewmodel-ktx = "2.5.1"
+
+# gradle
+gradle = "7.3.0"
+
+# kotlin
+kotlin = "1.7.10"
+kotlin-json = "1.4.0"
+ktor = "1.5.0"
+
+# compose
+compose = "1.2.1"
+compose-kotlin-compiler = "1.3.0"
+compose-activity = "1.5.1"
+compose-coil = "2.2.2"
+compose-lottie = "5.2.0"
+
+# accompanist
+accompanist = "0.25.1"
+
+# navigation
+navigation-compose = "2.5.2"
+navigation-hilt-compose = "1.0.0"
+
+# hilt
+dagger-hilt = "2.43.2"
+hilt = "1.0.0"
+
+# room
+room = "2.4.3"
+
+
+[libraries]
+
+# android
+android-gradle = { module = "com.android.tools.build:gradle", version.ref = "gradle" }
+activity-core-ktx = { module = "androidx.core:core-ktx", version.ref = "core-ktx" }
+app-compat = { module = "androidx.appcompat:appcompat", version.ref = "app-compat" }
+viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "viewmodel-ktx" }
+
+# kotlin
+kotlin-gradle = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
+kotlin-serialization = { module = "org.jetbrains.kotlin:kotlin-serialization", version.ref = "kotlin" }
+kotlin-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlin-json" }
+
+# network
+ktor-client = { module = "io.ktor:ktor-client-android", version.ref = "ktor" }
+ktor-client-serialization = { module = "io.ktor:ktor-client-serialization", version.ref = "ktor" }
+ktor-client-logging = { module = "io.ktor:ktor-client-logging-jvm", version.ref = "ktor" }
+
+# compose
+compose-activity = { module = "androidx.activity:activity-compose", version.ref = "compose-activity" }
+compose-ui = { module = "androidx.compose.ui:ui", version.ref = "compose" }
+compose-ui-preview = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "compose" }
+compose-material = { module = "androidx.compose.material:material", version.ref = "compose" }
+compose-tooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "compose" }
+compose-coil = { module = "io.coil-kt:coil-compose", version.ref = "compose-coil" }
+compose-lottie = { module = "com.airbnb.android:lottie-compose", version.ref = "compose-lottie" }
+
+# accompanist
+accompanist-insets = { module = "com.google.accompanist:accompanist-insets", version.ref = "accompanist" }
+accompanist-insets-ui = { module = "com.google.accompanist:accompanist-insets-ui", version.ref = "accompanist" }
+
+# navigation
+navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "navigation-compose" }
+navigation-hilt-compose = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "navigation-hilt-compose" }
+
+# hilt
+dagger-hilt = { module = "com.google.dagger:hilt-android", version.ref = "dagger-hilt" }
+hilt-navigation = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "hilt" }
+dagger-hilt-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "dagger-hilt" }
+hilt-compiler = { module = "androidx.hilt:hilt-compiler", version.ref = "hilt" }
+hilt-gradle = { module = "com.google.dagger:hilt-android-gradle-plugin", version.ref = "dagger-hilt" }
+
+# room
+room-runtime = { module = "androidx.room:room-runtime", version.ref = "room" }
+room-ktx = { module = "androidx.room:room-ktx", version.ref = "room" }
+room-kapt = { module = "androidx.room:room-compiler", version.ref = "room" }
+
+
+[bundles]
+
+classpathLibs = ["android-gradle", "kotlin-gradle", "hilt-gradle", "kotlin-serialization"]
+androidLibs = ["activity-core-ktx", "app-compat", "viewmodel-ktx"]
+accompanistLibs = ["accompanist-insets", "accompanist-insets-ui"]
+composeLibs = ["compose-activity", "compose-ui", "compose-ui-preview", "compose-material", "compose-coil", "compose-lottie"]
+composeDebugLibs = ["compose-tooling"]
+hiltLibs = ["dagger-hilt", "hilt-navigation"]
+hiltKaptLibs = ["dagger-hilt-compiler", "hilt-compiler"]
+kotlinLibs = ["kotlin-serialization-json"]
+navigationLibs = ["navigation-compose", "navigation-hilt-compose"]
+networkLibs = ["ktor-client", "ktor-client-serialization", "ktor-client-logging"]
+roomLibs = ["room-runtime", "room-ktx"]
+roomKaptLibs = ["room-kapt"]

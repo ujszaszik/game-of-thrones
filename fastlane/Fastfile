@@ -2,6 +2,12 @@ default_platform(:android)
 
 platform :android do
 
+  desc "Code validation"
+  lane :detekt do
+    gradle(task: "detekt")
+  end
+
+
   desc "Build and Deploy default version to Firebase"
   lane :deployToFirebase do
 

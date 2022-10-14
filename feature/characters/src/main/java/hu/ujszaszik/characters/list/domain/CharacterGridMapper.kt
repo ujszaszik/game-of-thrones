@@ -9,7 +9,6 @@ object CharacterGridMapper {
         return entities.map {
             CharacterGridModel(
                 id = it.id,
-                firstName = it.firstName,
                 imageUrl = it.imageUrl.fromBase64()
             )
         }

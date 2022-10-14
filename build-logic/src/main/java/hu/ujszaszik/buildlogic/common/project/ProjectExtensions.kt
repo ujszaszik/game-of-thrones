@@ -8,6 +8,7 @@ import org.gradle.api.Project
 import org.gradle.api.UnknownDomainObjectException
 import org.gradle.api.artifacts.ExternalModuleDependencyBundle
 import org.gradle.api.artifacts.dsl.DependencyHandler
+import org.gradle.api.plugins.ExtensionAware
 import org.gradle.kotlin.dsl.getByType
 
 fun Project.getSafeDomainExtensionType(): CommonExtension<*, *, *, *> {
@@ -18,17 +19,21 @@ fun Project.getSafeDomainExtensionType(): CommonExtension<*, *, *, *> {
     }
 }
 
-fun org.gradle.api.Project.`androidApplicationConfig`(configure: Action<com.android.build.gradle.internal.dsl.BaseAppModuleExtension>): Unit =
-    (this as org.gradle.api.plugins.ExtensionAware).extensions.configure("android", configure)
+fun Project.applyPluginVersion(id: String, versionName: String) {
+    pluginManager.findPlugin(id).apply { version = versionName }
+}
 
-fun org.gradle.api.Project.`androidLibraryConfig`(configure: Action<LibraryExtension>): Unit =
-    (this as org.gradle.api.plugins.ExtensionAware).extensions.configure("android", configure)
+fun Project.androidApplicationConfig(configure: Action<BaseAppModuleExtension>): Unit =
+    (this as ExtensionAware).extensions.configure("android", configure)
 
-fun DependencyHandler.`implementation`(bundle: ExternalModuleDependencyBundle) =
+fun Project.androidLibraryConfig(configure: Action<LibraryExtension>): Unit =
+    (this as ExtensionAware).extensions.configure("android", configure)
+
+fun DependencyHandler.implementation(bundle: ExternalModuleDependencyBundle) =
     bundle.forEach { add("implementation", it.toString()) }
 
-fun DependencyHandler.`debugImplementation`(bundle: ExternalModuleDependencyBundle) =
+fun DependencyHandler.debugImplementation(bundle: ExternalModuleDependencyBundle) =
     bundle.forEach { add("debugImplementation", it.toString()) }
 
-fun DependencyHandler.`kapt`(bundle: ExternalModuleDependencyBundle) =
+fun DependencyHandler.kapt(bundle: ExternalModuleDependencyBundle) =
     bundle.forEach { add("kapt", it.toString()) }

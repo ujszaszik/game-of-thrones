@@ -24,7 +24,7 @@ class CharactersListViewModel @Inject constructor(
             viewModel = this,
             loadEvent = { CharactersListEvent.Loading },
             successEvent = { CharactersListEvent.ShowCharacters(it) },
-            errorEvent = { CharactersListEvent.FailedToLoad(it).also { println(it.errorMessage) } }
+            errorEvent = { CharactersListEvent.FailedToLoad(it) }
         ).begin()
     }
 }

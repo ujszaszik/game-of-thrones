@@ -6,6 +6,7 @@ plugins {
     id("convention.navigation")
     id("convention.network")
     id("convention.packaging")
+    id("io.gitlab.arturbosch.detekt").version("1.21.0")
 }
 
 dependencies {
@@ -17,4 +18,15 @@ dependencies {
 
     implementation(project(":feature:characters"))
     implementation(project(":feature:splash"))
+}
+
+android {
+    detekt {
+        config = files("detekt_config.yml")
+        parallel = true
+        buildUponDefaultConfig = false
+        allRules = true
+        debug = true
+        basePath = projectDir.absolutePath
+    }
 }

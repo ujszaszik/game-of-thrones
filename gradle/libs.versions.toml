@@ -5,6 +5,9 @@ app-compat = "1.5.1"
 core-ktx = "1.9.0"
 viewmodel-ktx = "2.5.1"
 
+# google
+gms = "4.3.13"
+
 # gradle
 gradle = "7.3.0"
 
@@ -42,6 +45,9 @@ android-gradle = { module = "com.android.tools.build:gradle", version.ref = "gra
 activity-core-ktx = { module = "androidx.core:core-ktx", version.ref = "core-ktx" }
 app-compat = { module = "androidx.appcompat:appcompat", version.ref = "app-compat" }
 viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "viewmodel-ktx" }
+
+# google
+google-gms = { module = "com.google.gms:google-services", version.ref = "gms" }
 
 # kotlin
 kotlin-gradle = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
@@ -85,7 +91,7 @@ room-kapt = { module = "androidx.room:room-compiler", version.ref = "room" }
 
 [bundles]
 
-classpathLibs = ["android-gradle", "kotlin-gradle", "hilt-gradle", "kotlin-serialization"]
+classpathLibs = ["android-gradle", "kotlin-gradle", "hilt-gradle", "google-gms", "kotlin-serialization"]
 androidLibs = ["activity-core-ktx", "app-compat", "viewmodel-ktx"]
 accompanistLibs = ["accompanist-insets", "accompanist-insets-ui"]
 composeLibs = ["compose-activity", "compose-ui", "compose-ui-preview", "compose-material", "compose-coil", "compose-lottie"]

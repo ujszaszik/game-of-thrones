@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "446499260968",
+    "project_id": "game-of-thrones-f5f18",
+    "storage_bucket": "game-of-thrones-f5f18.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:446499260968:android:0076c4ceb73a33383e831d",
+        "android_client_info": {
+          "package_name": "hu.ujszaszik.gameofthrones"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "446499260968-381ohag8lqranb0nbg6f768p7t1i3shv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDAxuR9UC0fWTnW8o5ubMlBJK21G7fN1V0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "446499260968-381ohag8lqranb0nbg6f768p7t1i3shv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

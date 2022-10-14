@@ -18,6 +18,7 @@ class ApplicationConfigPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
             pluginManager.apply(ANDROID_APPLICATION_PLUGIN_ID)
+            pluginManager.apply(GOOGLE_SERVICES_PLUGIN_ID)
             val extension = extensions.getByType<BaseAppModuleExtension>()
             configureApplication(extension)
         }
@@ -64,6 +65,7 @@ class ApplicationConfigPlugin : Plugin<Project> {
 
     companion object {
         private const val ANDROID_APPLICATION_PLUGIN_ID = "com.android.application"
+        private const val GOOGLE_SERVICES_PLUGIN_ID = "com.google.gms.google-services"
         private const val ANDROID_LIBS_BUNDLE_ID = "androidLibs"
     }
 }

@@ -1,0 +1,21 @@
+default_platform(:android)
+
+platform :android do
+
+  desc "Build and Deploy default version to Firebase"
+  lane :deployToFirebase do
+
+    buildParams = read_json(json_path: "AppDistributionConfig/params.json")
+
+    gradle(task: "clean assembleDebug")
+
+    firebase_app_distribution(
+        firebase_cli_token: ENV['THRONES_CLI_TOKEN'],
+        service_credentials_file: buildParams[:credentials_file],
+        app: ENV['THRONES_APP_ID'],
+        release_notes_file: buildParams[:release_notes_file],
+        groups_file: buildParams[:groups_file]
+    )
+  end
+
+end

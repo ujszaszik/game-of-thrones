@@ -9,6 +9,7 @@ import hu.ujszaszik.characters.list.domain.CharacterGridModel
 import hu.ujszaszik.characters.list.viewmodel.CharactersListViewModel
 import hu.ujszaszik.characters.shared.navigation.LocalCharactersRouter
 import hu.ujszaszik.extension.collectAsStateValue
+import hu.ujszaszik.navigation.host.BackPressStrategy
 import hu.ujszaszik.navigation.host.Host
 import hu.ujszaszik.navigation.host.HostType
 import hu.ujszaszik.ui.layout.LoadingBox
@@ -17,7 +18,8 @@ import hu.ujszaszik.ui.orientation.OrientationBased
 val CharactersListScreen = Host(
     title = "Characters",
     route = "CharactersListScreen",
-    type = HostType.MAIN
+    type = HostType.MAIN,
+    backPressStrategy = BackPressStrategy.NONE
 )
 
 @Composable

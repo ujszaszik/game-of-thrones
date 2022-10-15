@@ -17,7 +17,7 @@
         android:theme="@style/Theme.GameOfThrones"
         tools:targetApi="31">
         <activity
-            android:name="hu.ujszaszik.gameofthrones.presentation.ui.MainActivity"
+            android:name="hu.ujszaszik.gameofthrones.presentation.MainActivity"
             android:exported="true"
             android:theme="@style/Theme.GameOfThrones">
             <intent-filter>

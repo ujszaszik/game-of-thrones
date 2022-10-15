@@ -1,6 +1,5 @@
-package hu.ujszaszik.gameofthrones.presentation.ui
+package hu.ujszaszik.gameofthrones.presentation
 
-import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.size
@@ -23,7 +22,7 @@ fun MainAppBar(
     showBackArrow: Boolean,
     onBackArrowClick: () -> Unit
 ) {
-    AnimatedVisibility(visible = isVisible) {
+    if (isVisible) {
         TopAppBar(
             title = {
                 Text(

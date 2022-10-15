@@ -1,5 +1,6 @@
 package hu.ujszaszik.characters.details.viewmodel
 
+import androidx.annotation.VisibleForTesting
 import dagger.hilt.android.lifecycle.HiltViewModel
 import hu.ujszaszik.characters.details.domain.GetCharacterByIdUseCase
 import hu.ujszaszik.data.resource.ResourceFlowMediator
@@ -12,9 +13,10 @@ class CharacterDetailsViewModel @Inject constructor(
 ) :
     ReducerViewModel<CharactersDetailsState, CharactersDetailsEvent>() {
 
-    override val reducer = CharactersListReducer(CharactersDetailsState())
+    override val reducer = CharactersDetailsReducer(CharactersDetailsState())
 
-    internal fun loadCharacterDetails(id: Int) {
+    @VisibleForTesting
+    fun loadCharacterDetails(id: Int) {
         ResourceFlowMediator(
             source = getCharacterByIdUseCase(id),
             viewModel = this,

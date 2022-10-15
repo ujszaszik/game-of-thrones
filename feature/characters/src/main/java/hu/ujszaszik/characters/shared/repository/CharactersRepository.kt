@@ -12,10 +12,10 @@ import javax.inject.Inject
 class CharactersRepository @Inject constructor(
     database: CharactersDatabase,
     private val service: CharactersService,
-) {
+) : ICharactersRepository {
     private val dao = database.dao()
 
-    fun getAllCharacters(): ResourceFlow<List<CharacterEntity>> {
+    override fun getAllCharacters(): ResourceFlow<List<CharacterEntity>> {
         return cacheResourceOperation(
             cachedData = { dao.getAll() },
             remoteCall = { service.getAll() },
@@ -25,7 +25,7 @@ class CharactersRepository @Inject constructor(
         )
     }
 
-    fun getCharacterById(id: Int): ResourceFlow<CharacterEntity> {
+    override fun getCharacterById(id: Int): ResourceFlow<CharacterEntity> {
         return localDataOperation { dao.getById(id) }
     }
 }

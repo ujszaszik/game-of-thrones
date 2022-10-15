@@ -85,4 +85,9 @@ fun NamedDomainObjectContainer<PluginDeclaration>.registerConventionPlugins(
         id = "$conventionID.room"
         implementationClass = "$conventionPrefix.room.Room$conventionPostfix"
     }
+
+    register("testingPlugin") {
+        id = "$conventionID.testing"
+        implementationClass = "$conventionPrefix.testing.Testing$conventionPostfix"
+    }
 }

@@ -4,6 +4,7 @@ plugins {
     id("convention.compose")
     id("convention.hilt")
     id("convention.navigation")
+    id("convention.testing")
 }
 
 android {

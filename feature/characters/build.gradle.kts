@@ -7,6 +7,7 @@ plugins {
     id("convention.navigation")
     id("convention.network")
     id("convention.room")
+    id("convention.testing")
 }
 
 android {

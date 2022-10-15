@@ -2,12 +2,15 @@ package hu.ujszaszik.characters.shared
 
 import android.content.Context
 import androidx.room.Room
+import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import hu.ujszaszik.characters.shared.local.CharactersDatabase
+import hu.ujszaszik.characters.shared.repository.CharactersRepository
+import hu.ujszaszik.characters.shared.repository.ICharactersRepository
 import javax.inject.Singleton
 
 @Module
@@ -26,4 +29,13 @@ object CharactersModule {
         ).build()
     }
 
+}
+
+@Module
+@InstallIn(SingletonComponent::class)
+interface CharactersRepositoryModule {
+
+    @Binds
+    @Singleton
+    fun bindCharactersRepository(charactersRepository: CharactersRepository): ICharactersRepository
 }

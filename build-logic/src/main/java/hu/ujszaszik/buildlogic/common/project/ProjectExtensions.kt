@@ -19,10 +19,6 @@ fun Project.getSafeDomainExtensionType(): CommonExtension<*, *, *, *> {
     }
 }
 
-fun Project.applyPluginVersion(id: String, versionName: String) {
-    pluginManager.findPlugin(id).apply { version = versionName }
-}
-
 fun Project.androidApplicationConfig(configure: Action<BaseAppModuleExtension>): Unit =
     (this as ExtensionAware).extensions.configure("android", configure)
 
@@ -34,6 +30,9 @@ fun DependencyHandler.implementation(bundle: ExternalModuleDependencyBundle) =
 
 fun DependencyHandler.debugImplementation(bundle: ExternalModuleDependencyBundle) =
     bundle.forEach { add("debugImplementation", it.toString()) }
+
+fun DependencyHandler.testImplementation(bundle: ExternalModuleDependencyBundle) =
+    bundle.forEach { add("testImplementation", it.toString()) }
 
 fun DependencyHandler.kapt(bundle: ExternalModuleDependencyBundle) =
     bundle.forEach { add("kapt", it.toString()) }

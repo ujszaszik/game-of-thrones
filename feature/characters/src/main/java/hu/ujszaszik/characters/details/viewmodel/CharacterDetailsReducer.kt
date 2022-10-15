@@ -19,7 +19,7 @@ sealed class CharactersDetailsEvent : UiEvent {
     class ShowCharacterDetails(val character: CharacterDetailModel) : CharactersDetailsEvent()
 }
 
-class CharactersListReducer(initialState: CharactersDetailsState) :
+class CharactersDetailsReducer(initialState: CharactersDetailsState) :
     Reducer<CharactersDetailsState, CharactersDetailsEvent>(initialState) {
 
     override fun reduce(oldState: CharactersDetailsState, event: CharactersDetailsEvent) {

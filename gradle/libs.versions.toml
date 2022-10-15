@@ -37,6 +37,12 @@ hilt = "1.0.0"
 # room
 room = "2.4.3"
 
+# unit-test
+test-junit = "4.13.2"
+test-core = "1.1.1"
+test-coroutines = "1.6.4"
+test-mockito = "4.8.0"
+test-robolectric = "4.9"
 
 [libraries]
 
@@ -88,6 +94,12 @@ room-runtime = { module = "androidx.room:room-runtime", version.ref = "room" }
 room-ktx = { module = "androidx.room:room-ktx", version.ref = "room" }
 room-kapt = { module = "androidx.room:room-compiler", version.ref = "room" }
 
+# unit-test
+test-junit = { module = "junit:junit", version.ref = "test-junit" }
+test-core = { module = "android.arch.core:core-testing", version.ref = "test-core" }
+test-coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "test-coroutines" }
+test-mockito = { module = "org.mockito:mockito-core", version.ref = "test-mockito" }
+test-robolectric = { module = "org.robolectric:robolectric", version.ref = "test-robolectric" }
 
 [bundles]
 
@@ -103,3 +115,4 @@ navigationLibs = ["navigation-compose", "navigation-hilt-compose"]
 networkLibs = ["ktor-client", "ktor-client-serialization", "ktor-client-logging"]
 roomLibs = ["room-runtime", "room-ktx"]
 roomKaptLibs = ["room-kapt"]
+testingLibs = ["test-junit", "test-core", "test-coroutines", "test-mockito", "test-robolectric"]

@@ -1,5 +1,6 @@
 package hu.ujszaszik.splash.presentation.viewmodel
 
+import androidx.annotation.VisibleForTesting
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import hu.ujszaszik.reducer.ReducerViewModel
@@ -24,6 +25,7 @@ class SplashViewModel @Inject constructor() : ReducerViewModel<SplashState, Spla
     }
 
     companion object {
-        private const val SPLASH_DELAY = 1500L
+        @VisibleForTesting
+        const val SPLASH_DELAY = 1500L
     }
 }

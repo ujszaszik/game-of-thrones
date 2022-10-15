@@ -39,9 +39,8 @@ fun MainHost() {
                     .imePadding()
             ) {
                 BackHandler {
-                    when (host?.backPressStrategy) {
-                        BackPressStrategy.POP_BACKSTACK -> router.pop()
-                        else -> Unit
+                    if (host?.backPressStrategy == BackPressStrategy.POP_BACKSTACK) {
+                        router.pop()
                     }
                 }
                 ApplicationGraph()

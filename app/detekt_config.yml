@@ -321,7 +321,7 @@ naming:
     minimumFunctionNameLength: 3
   FunctionNaming:
     active: true
-    excludes: [ '**/test/**', '**/androidTest/**', '**/navigation/**', '**/ui/**', '**/resources/**' ]
+    excludes: [ '**/test/**', '**/androidTest/**', '**/navigation/**', '**/ui/**', '**/resources/**', '**/presentation/**' ]
     functionPattern: '[a-z][a-zA-Z0-9]*'
     excludeClassPattern: '$^'
     ignoreOverridden: true

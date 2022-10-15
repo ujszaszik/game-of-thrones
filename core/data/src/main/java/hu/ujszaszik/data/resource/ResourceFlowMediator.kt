@@ -1,10 +1,14 @@
 package hu.ujszaszik.data.resource
 
+import androidx.lifecycle.viewModelScope
 import hu.ujszaszik.extension.empty
 import hu.ujszaszik.extension.launch
 import hu.ujszaszik.reducer.ReducerViewModel
 import hu.ujszaszik.reducer.model.UiEvent
 import hu.ujszaszik.reducer.model.UiState
+import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.flow.stateIn
 
 class ResourceFlowMediator<Source, State : UiState, Event : UiEvent>(
     private val source: ResourceFlow<Source>,
@@ -16,7 +20,11 @@ class ResourceFlowMediator<Source, State : UiState, Event : UiEvent>(
 
     fun begin() {
         viewModel.launch {
-            source.collect { resource ->
+            source.stateIn(
+                started = SharingStarted.WhileSubscribed(STOP_TIME_OUT),
+                initialValue = Resource.Loading(),
+                scope = viewModel.viewModelScope
+            ).collectLatest { resource ->
                 when (resource) {
                     is Resource.Loading -> doOnLoading()
                     is Resource.Success -> doOnSuccess(resource)
@@ -41,5 +49,9 @@ class ResourceFlowMediator<Source, State : UiState, Event : UiEvent>(
             val errorMessage = resource.message ?: String.empty
             viewModel.reducer.sendEvent(errorEvent(errorMessage))
         }
+    }
+
+    companion object {
+        private const val STOP_TIME_OUT = 5000L //ms
     }
 }

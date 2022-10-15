@@ -3,7 +3,7 @@ package hu.ujszaszik.characters.shared.mapper
 import android.arch.core.executor.testing.InstantTaskExecutorRule
 import hu.ujszaszik.characters.shared.remote.fakeCharacterResponses
 import hu.ujszaszik.extension.toBase64
-import junit.framework.Assert.assertEquals
+import org.junit.Assert.assertEquals
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith

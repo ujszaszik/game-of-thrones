@@ -3,7 +3,7 @@ package hu.ujszaszik.characters.list.domain
 import android.arch.core.executor.testing.InstantTaskExecutorRule
 import hu.ujszaszik.characters.shared.repository.fakeCharacters
 import hu.ujszaszik.extension.fromBase64
-import junit.framework.Assert.assertEquals
+import org.junit.Assert.assertEquals
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith

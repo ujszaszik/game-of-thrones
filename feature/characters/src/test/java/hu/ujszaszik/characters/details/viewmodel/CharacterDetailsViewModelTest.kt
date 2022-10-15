@@ -5,7 +5,7 @@ import hu.ujszaszik.characters.details.domain.CharacterDetailsMapper
 import hu.ujszaszik.characters.details.domain.GetCharacterByIdUseCase
 import hu.ujszaszik.characters.shared.repository.FakeCharactersRepository
 import hu.ujszaszik.characters.shared.repository.fakeCharacters
-import junit.framework.Assert.*
+import org.junit.Assert.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.first

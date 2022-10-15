@@ -1,8 +1,8 @@
 package hu.ujszaszik.splash.presentation.viewmodel
 
 import android.arch.core.executor.testing.InstantTaskExecutorRule
-import junit.framework.Assert.assertFalse
-import junit.framework.Assert.assertTrue
+import org.junit.Assert.assertFalse
+import org.junit.Assert.assertTrue
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.delay

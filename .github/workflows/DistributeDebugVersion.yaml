@@ -33,8 +33,11 @@ jobs:
       - name: Store Application ID as environment variable
         run: echo "THRONES_APP_ID=${{ secrets.THRONES_APP_ID }}" >> $GITHUB_ENV
 
-      - name: Code validation
+      - name: Code Validation
         run: bundle exec fastlane detekt
+
+      - name: Run Unit Tests
+        run: bundle exec fastlane unitTest
 
       - name: Deploy Debug Build to Firebase App Distribution
         run: bundle exec fastlane deployToFirebase

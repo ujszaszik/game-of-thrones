@@ -7,6 +7,10 @@ platform :android do
     gradle(task: "detekt")
   end
 
+  desc "Run Unit Tests"
+  lane :unitTest do
+    gradle(task: "test")
+  end
 
   desc "Build and Deploy default version to Firebase"
   lane :deployToFirebase do

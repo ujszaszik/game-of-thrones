@@ -23,6 +23,14 @@ For _fastlane_ installation instructions, see [Installing _fastlane_](https://do
 
 Code validation
 
+### android unitTest
+
+```sh
+[bundle exec] fastlane android unitTest
+```
+
+Run Unit Tests
+
 ### android deployToFirebase
 
 ```sh
